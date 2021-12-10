@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	f, err := os.Open("input.txt")
+	f, err := os.Open("../input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,5 +33,5 @@ func main() {
 		prevNum = currNum
 		i += 1
 	}
-	fmt.Printf("Number of increases: %d", increases)
+	fmt.Printf("Number of increases: %d\n", increases)
 }
