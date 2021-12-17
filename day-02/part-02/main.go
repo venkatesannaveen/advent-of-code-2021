@@ -18,7 +18,7 @@ func main() {
 	defer f.Close()
 
 	scanner := bufio.NewScanner(f)
-	var horizontal, depth int
+	var horizontal, depth, aim int
 
 	for scanner.Scan() {
 		currMove := strings.Fields(scanner.Text())
@@ -26,14 +26,15 @@ func main() {
 
 		if currMove[0] == "forward" {
 			horizontal += steps
+			depth += steps * aim
 		}
 
 		if currMove[0] == "up" {
-			depth -= steps
+			aim -= steps
 		}
 
 		if currMove[0] == "down" {
-			depth += steps
+			aim += steps
 		}
 	}
 
